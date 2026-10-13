@@ -9,6 +9,7 @@ import {
   Bot,
   Users,
   ArrowLeftRight,
+  BookOpen,
 } from 'lucide-react';
 import { WarpChessGame } from './engine/game';
 import { SquareCoord, Move, PieceType, PieceColor, GameStatus } from './engine/types';
@@ -339,6 +340,18 @@ export const App: React.FC = () => {
               <span className="hidden sm:inline">Rules</span>
             </button>
 
+            {/* Official Rulebook Link */}
+            <a
+              href="https://github.com/anurag-kush/warp-chess/blob/main/RULEBOOK.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open Official Rulebook on GitHub"
+              className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white transition-colors shadow"
+            >
+              <BookOpen size={13} />
+              <span className="hidden sm:inline">Rulebook</span>
+            </a>
+
             {/* Feedback Button */}
             <button
               onClick={() => setFeedbackOpen(true)}
@@ -353,6 +366,34 @@ export const App: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl mx-auto w-full px-3 py-4 flex flex-col items-center">
+        {/* Concept Notice & Feedback Callout Banner */}
+        <div className="w-full max-w-4xl mb-3.5 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-cyan-950/60 via-slate-900/90 to-purple-950/60 border border-cyan-800/40 shadow-md text-xs text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <div className="flex items-start sm:items-center gap-2.5">
+            <span className="text-lg flex-shrink-0">♟️🌀</span>
+            <p className="leading-snug text-slate-300">
+              <strong className="text-cyan-300 font-semibold">Variant Concept Under Active Build:</strong> Warp Chess is a chess variant concept still under construction, and we would greatly appreciate your feedback. Most of the moves have been tested and configured as such, but we encourage you to share any discrepancies you see with us — we will try to fix it or give you a fair explanation!
+            </p>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0 self-end sm:self-auto">
+            <button
+              onClick={() => setFeedbackOpen(true)}
+              className="px-2.5 py-1 text-xs font-semibold rounded-md bg-cyan-600 hover:bg-cyan-500 text-white transition-colors flex items-center gap-1 shadow-sm"
+            >
+              <MessageSquare size={12} />
+              <span>Feedback</span>
+            </button>
+            <a
+              href="https://github.com/anurag-kush/warp-chess/blob/main/RULEBOOK.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 hover:bg-slate-700 text-indigo-300 hover:text-indigo-200 border border-indigo-700/50 transition-colors flex items-center gap-1 shadow-sm"
+            >
+              <BookOpen size={12} />
+              <span>Rulebook</span>
+            </a>
+          </div>
+        </div>
+
         {/* Status Alert Banner */}
         <div
           className={`w-full max-w-4xl px-4 py-2 mb-4 rounded-lg flex items-center justify-between border text-xs sm:text-sm font-semibold transition-all ${

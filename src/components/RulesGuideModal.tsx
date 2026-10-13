@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, BookOpen } from 'lucide-react';
+import { X, BookOpen, ExternalLink } from 'lucide-react';
 
 interface RulesGuideModalProps {
   isOpen: boolean;
@@ -19,10 +19,13 @@ export const RulesGuideModal: React.FC<RulesGuideModalProps> = ({ isOpen, onClos
           <X size={22} />
         </button>
 
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-1">
           <BookOpen className="w-6 h-6 text-cyan-400" />
-          <h2 className="text-xl font-bold text-slate-100">Two-Layer Chess: Quick Rules Guide</h2>
+          <h2 className="text-xl font-bold text-slate-100">Warp Chess: Rules Guide</h2>
         </div>
+        <p className="text-xs text-slate-400 mb-3">
+          Warp Chess is an evolving variant under build. See any unexpected moves? Share your feedback with us!
+        </p>
 
         <div className="overflow-y-auto space-y-4 pr-2 text-sm text-slate-300">
           {/* Concept */}
@@ -85,7 +88,17 @@ export const RulesGuideModal: React.FC<RulesGuideModalProps> = ({ isOpen, onClos
           </div>
         </div>
 
-        <div className="mt-5 pt-3 border-t border-slate-800 text-center">
+        <div className="mt-5 pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <a
+            href="https://github.com/anurag-kush/warp-chess/blob/main/RULEBOOK.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 font-medium underline-offset-4 hover:underline"
+          >
+            <BookOpen size={14} />
+            <span>Read Complete Official Rulebook on GitHub (RULEBOOK.md)</span>
+            <ExternalLink size={12} />
+          </a>
           <button
             onClick={onClose}
             className="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-lg transition-colors"
