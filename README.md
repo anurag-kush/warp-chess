@@ -2,6 +2,8 @@
 
 > A tactical chess variant played across **two overlapping 8 × 8 floors** (8 × 8 × 2) featuring fixed **Warp Gates**, agile **Jump Pieces**, and same-floor attack geometry.
 
+🎮 **Play Live Online:** [https://anurag-kush.github.io/warp-chess/](https://anurag-kush.github.io/warp-chess/)
+
 ---
 
 ## 🌟 Key Features
